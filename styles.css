@@ -450,3 +450,27 @@ tr.total td { font-weight: 700; color: var(--navy); background: var(--aqua-soft)
   .tam-rings { transform: scale(.72); }
   table { min-width: 420px; }
 }
+
+/* ------------------------------------------------------------
+   PILL-NAV: keep the page-top toggle inside the viewport on
+   phones (it was the last thing pushing horizontal overflow)
+   ------------------------------------------------------------ */
+@media (max-width: 620px) {
+  .pill-nav {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    gap: 4px;
+    box-sizing: border-box;
+  }
+  .pill-nav a {
+    flex: 1 1 0;
+    min-width: 0;
+    text-align: center;
+    padding: 9px 6px;
+    font-size: .78rem;
+    line-height: 1.25;
+  }
+  /* let long, tightly scrollable tables signal there's more to the side */
+  .table-wrap { position: relative; }
+}

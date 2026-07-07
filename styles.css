@@ -404,3 +404,49 @@ tr.total td { font-weight: 700; color: var(--navy); background: var(--aqua-soft)
 /* small print disclaimer band */
 .disclaimer { background: var(--paper-2); border: 1px dashed var(--line); border-radius: var(--radius-sm); padding: 20px 24px; font-size: .84rem; color: var(--muted); }
 .disclaimer strong { color: var(--navy); }
+
+/* ============================================================
+   MOBILE HARDENING (fixes horizontal overflow + reading polish)
+   ============================================================ */
+
+/* Grid / flex children must be allowed to shrink, else wide content
+   (esp. tables with min-width) forces the whole page to scroll sideways. */
+.grid > *, .g-2 > *, .g-3 > *, .g-4 > *,
+.funds-grid > *, .tam > *, .bio > *, .ask-box > *,
+.returns > *, .big-metric > *, .contact-grid > *, .kpi-row > * { min-width: 0; }
+
+/* Keep scrollable tables inside their box, never past the viewport */
+.table-wrap { max-width: 100%; }
+.chart-svg, svg.chart-svg { max-width: 100%; }
+
+@media (max-width: 620px) {
+  .wrap { padding: 0 18px; }
+  .section { padding: clamp(44px, 12vw, 72px) 0; }
+  .section-head { margin-bottom: 30px; }
+
+  /* tighten oversized display type for comfortable phone reading */
+  h1 { font-size: clamp(2rem, 8.5vw, 2.6rem); }
+  h2 { font-size: clamp(1.6rem, 6.5vw, 2rem); }
+  .lead { font-size: 1.02rem; }
+  body { font-size: 16px; }
+
+  /* narrow tables so most fit without side-scroll; wide ones still
+     scroll neatly inside their own box */
+  table { min-width: 480px; font-size: .88rem; }
+  th, td { padding: 11px 12px; }
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+
+  /* cards / callouts a touch tighter */
+  .card { padding: 24px; }
+  .callout { padding: 22px 22px; }
+  .quote { padding: 26px 24px; }
+
+  /* fixed-size decorative diagrams scale down to fit any phone */
+  .tam-rings { transform: scale(.82); transform-origin: center; }
+  .donut-wrap { width: 200px; }
+}
+
+@media (max-width: 380px) {
+  .tam-rings { transform: scale(.72); }
+  table { min-width: 420px; }
+}

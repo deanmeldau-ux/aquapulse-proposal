@@ -8,7 +8,7 @@
 <meta property="og:title" content="Aqua Fitness in Claremont, Mondays and Thursdays at 9am">
 <meta property="og:description" content="A warm indoor pool, a small friendly class, a full body workout that feels easy on the joints. Book your 9am seat with Heather.">
 <meta property="og:type" content="website">
-<link rel="icon" href="assets/favicon.png">
+<link rel="icon" href="assets/favicon.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -79,7 +79,10 @@ strong{color:var(--navy);font-weight:600}
 
 /* ---------- hero ---------- */
 .hero{position:relative;background:linear-gradient(160deg,#003261 0%,#024a8f 55%,#057dcd 100%);color:#fff;overflow:hidden;padding:clamp(52px,9vw,96px) 0 0}
-.hero__grid{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
+.hero__grid{display:grid;grid-template-columns:1.08fr .92fr;grid-template-areas:"intro photo" "cta photo";gap:8px 48px;align-items:center}
+.hero__intro{grid-area:intro}
+.hero__cta{grid-area:cta}
+.hero__photo{grid-area:photo}
 .hero__tag{font-family:var(--f-head);font-weight:600;letter-spacing:.03em;color:var(--aqua);font-size:clamp(1rem,2.2vw,1.3rem);margin-bottom:14px;display:inline-flex;align-items:center;gap:9px}
 .hero h1{color:#fff;margin-bottom:18px}
 .hero h1 span{color:var(--aqua)}
@@ -93,7 +96,7 @@ strong{color:var(--navy);font-weight:600}
 .hero__photo img{border-radius:22px;box-shadow:var(--shadow-lg);border:6px solid rgba(255,255,255,.14);width:100%;object-fit:cover}
 .hero__badge{position:absolute;bottom:-20px;left:-18px;background:#fff;color:var(--navy);border-radius:16px;padding:13px 20px;box-shadow:var(--shadow-md);font-family:var(--f-head);font-weight:700;font-size:1.02rem}
 .hero__badge span{display:block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ocean);font-weight:600}
-@media(max-width:860px){.hero__grid{grid-template-columns:1fr;gap:44px}.hero__photo{max-width:400px;margin:0 auto}.hero__badge{left:0}}
+@media(max-width:860px){.hero__grid{grid-template-columns:1fr;grid-template-areas:"intro" "photo" "cta";gap:24px}.hero__photo{max-width:440px;margin:2px auto 8px}.hero__badge{left:0}}
 
 .wave{line-height:0}
 .wave svg{width:100%;height:64px;display:block}
@@ -208,7 +211,7 @@ details .faq__body p:last-child{margin-bottom:0}
 <div class="topbar">
   <div class="topbar__inner">
     <a class="topbar__brand" href="#top">
-      <img src="assets/logo-transparent.png" alt="AquaPulse logo">
+      <img src="assets/logo-transparent.png?v=4" alt="AquaPulse logo">
       <b>AquaPulse</b>
     </a>
     <a class="btn btn--wa" href="https://wa.me/27717481698?text=Hi%20Heather%2C%20I%27d%20love%20to%20book%20a%209am%20Aqua%20Fitness%20seat.%20Which%20date%20has%20space%3F" target="_blank" rel="noopener">
@@ -222,10 +225,12 @@ details .faq__body p:last-child{margin-bottom:0}
 <header class="hero" id="top">
   <div class="wrap">
     <div class="hero__grid">
-      <div>
+      <div class="hero__intro">
         <p class="hero__tag">Making waves in wellness</p>
         <h1>A workout that feels like <span>freedom</span>, not punishment.</h1>
         <p class="hero__sub">Low impact, high energy aqua fitness in a warm indoor pool in Claremont. Gentle on your joints, kind to beginners, and honestly a lot of fun.</p>
+      </div>
+      <div class="hero__cta">
         <div class="hero__when">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Mondays &amp; Thursdays, 9:00am
@@ -243,7 +248,7 @@ details .faq__body p:last-child{margin-bottom:0}
         </p>
       </div>
       <div class="hero__photo">
-        <img src="assets/class-hero.jpg" alt="An aqua fitness class in a warm indoor pool">
+        <img src="assets/class-hero.jpg?v=4" alt="An aqua fitness class in a warm indoor pool">
         <div class="hero__badge"><span>Claremont, Cape Town</span>Warm indoor pool</div>
       </div>
     </div>
@@ -460,7 +465,7 @@ details .faq__body p:last-child{margin-bottom:0}
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
-    <img src="assets/logo-transparent.png" alt="AquaPulse">
+    <img src="assets/logo-transparent.png?v=4" alt="AquaPulse">
     <p class="footer__tag">Making waves in wellness</p>
     <p>AquaPulse Aqua Fitness, Claremont, Cape Town<br>
     104 Queen Victoria Road &middot; <a href="https://wa.me/27717481698" target="_blank" rel="noopener">WhatsApp 071 748 1698</a></p>
